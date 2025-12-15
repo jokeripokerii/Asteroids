@@ -56,11 +56,12 @@ def main():
                 log_event("player_hit")
                 print("Game over!")
                 sys.exit()
+        #checking bullet hits
         for roid2 in asteroids:
             for buret in shots:
                 if roid2.collides_with(buret) == True:
                     log_event("asteroid_shot")
-                    roid2.kill()
+                    roid2.split()
                     buret.kill()
 
         pygame.display.flip()
